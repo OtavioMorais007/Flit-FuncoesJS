@@ -6,7 +6,6 @@ function SolicitarDados() {
     senha = prompt("Digite sua senha: ")
 }
 
-
 let nome2
 let senha2
 function VerificarDados(nome, senha) {
@@ -95,4 +94,31 @@ function confirmarDados4(nome, idade) {
     console.log('Geração: ', geracao)
 }
 
-confirmarDados4('Marcos', 40)
+function AumentoSalario(salario) {
+    try{
+        if(typeof salario == "number"){
+            switch(true){
+                case salario <= 1500:
+                    salarioAumentado = salario * 1.20
+                    console.log("O salário com aumento e de R$" + salarioAumentado)
+                    break;
+                case salario > 1500 && salario <= 2000:
+                    salarioAumentado = salario * 1.15
+                    console.log("O salário com aumento e de R$" + salarioAumentado)
+                    break;
+                case salario > 2000 && salario <= 3000:
+                    salarioAumentado = salario * 1.10
+                    console.log("O salário com aumento e de R$" + salarioAumentado)
+                    break;
+                case salario > 3000:
+                    salarioAumentado = salario * 1.05
+                    console.log("O salário com aumento e de R$" + salarioAumentado)
+                    break;
+            }
+        } else {
+            throw new Error("O salário informado não é um número")
+        }
+    } catch(error){
+        console.log(error)
+    }
+}
